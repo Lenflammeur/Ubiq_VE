@@ -15,7 +15,7 @@ namespace Ubiq.Messaging
         {
             this.position = transform.localPosition;
             this.rotation = transform.localRotation;
-        }
+        }//initalization
     }
 
 
