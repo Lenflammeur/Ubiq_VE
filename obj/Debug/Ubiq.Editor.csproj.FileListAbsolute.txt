@@ -1,0 +1,2 @@
+C:\Users\15460\Documents\UCL MSc CGVI\Virtual Environment\HW2-Group Project\Ubiq_VE\obj\Debug\Ubiq.Editor.csprojAssemblyReference.cache
+C:\Users\15460\Documents\UCL MSc CGVI\Virtual Environment\HW2-Group Project\Ubiq_VE\obj\Debug\Ubiq.Editor.csproj.CoreCompileInputs.cache

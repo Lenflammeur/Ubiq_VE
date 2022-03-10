@@ -55,6 +55,10 @@
   <ItemGroup>
     <Compile Include="Assets\Ball.cs" />
     <Compile Include="Assets\Brick2move.cs" />
+    <Compile Include="Assets\ControlBricks.cs" />
+    <Compile Include="Assets\EnvironmentManager.cs" />
+    <Compile Include="Assets\FollowPlayer.cs" />
+    <Compile Include="Assets\PlayingPanelController.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\BoidState.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\Boids.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\BoidsManager.cs" />
