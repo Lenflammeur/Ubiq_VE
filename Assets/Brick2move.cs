@@ -8,7 +8,7 @@ using static EnvironmentManager;
 public class Brick2move : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
     public Hand grasped;
-    NetworkId INetworkObject.Id => new NetworkId(1001);
+    NetworkId INetworkObject.Id => NetworkId.Unique(); //new NetworkId(1001);// 
     private NetworkContext context;
     private int move_time;
     private Vector3 last_pos = Vector3Int.zero;
