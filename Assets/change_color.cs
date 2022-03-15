@@ -12,26 +12,28 @@ namespace Ubiq.Samples
         private GameObject grasped;
         [SerializeField]
         private Color color;
-        private Renderer graspedRenderer;
+        private Material graspedRenderer;
         
+       
 
         private void Change_color()
         {
-            Debug.Log("haha");
-            graspedRenderer.sharedMaterial.SetColor("_Color", color);
+            GameObject selectedObject = Instantiate(grasped);
+            graspedRenderer = selectedObject.GetComponentInChildren<Renderer>().material;
+            graspedRenderer.SetColor("_Color", color);
+
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            graspedRenderer = grasped.GetComponentInChildren<Renderer>();
             gameObject.GetComponent<Button>().onClick.AddListener(Change_color);
         }
 
         // Update is called once per frame
         void Update()
         {
-  
+            
         }
     }
 }
