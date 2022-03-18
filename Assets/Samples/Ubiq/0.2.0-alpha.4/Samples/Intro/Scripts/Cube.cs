@@ -12,7 +12,6 @@ namespace Ubiq.Samples
 
         private Hand grasped;
 
-        int n = 0;
 
         public NetworkId Id { get; set; } // the network Id will be set by the spawner, which will always be the one to instantiate the Firework
 
@@ -42,33 +41,32 @@ namespace Ubiq.Samples
                 //GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.blue);
             }
 
-            if (Input.GetKeyDown(KeyCode.K) && grasped)
+            if (Input.GetKeyDown(KeyCode.R) && grasped)
             {
                 GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
             }
 
-            if (Input.GetKeyDown(KeyCode.L) && grasped)
+            if (Input.GetKeyDown(KeyCode.B) && grasped)
             {
                 GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.blue);
             }
 
-            if (Input.GetKeyDown(KeyCode.M) && grasped)
+            if (Input.GetKeyDown(KeyCode.G) && grasped)
             {
-                GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.yellow);
+                GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.green);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && grasped)
+            {
+                transform.localScale = transform.localScale * .5f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) && grasped)
+            {
+                transform.localScale = transform.localScale / 0.5f;
             }
         }
 
-        public void Change_red()
-        {
-            if ( n == 0)
-            {
-                Debug.Log(n);
-               
-                n++;
-            }
-            
-            
-        }
+        
 
         public void OnSpawned(bool local)
         {

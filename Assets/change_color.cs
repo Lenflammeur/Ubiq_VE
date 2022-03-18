@@ -19,7 +19,7 @@ namespace Ubiq.Samples
         private void Change_color()
         {
             GameObject selectedObject = Instantiate(grasped);
-            graspedRenderer = selectedObject.GetComponentInChildren<Renderer>().material;
+            graspedRenderer = selectedObject.GetComponentInChildren<Renderer>().sharedMaterial;
             graspedRenderer.SetColor("_Color", color);
 
         }

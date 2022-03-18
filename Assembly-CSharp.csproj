@@ -59,6 +59,7 @@
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\Boids.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\BoidsManager.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\BoidsTransformsComponent.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Assets\Timer\TimerCountdown.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\AudioBox.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\AvatarAudioStatusIndicator.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\AvatarMenuController.cs" />
@@ -132,6 +133,7 @@
     <None Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Tutorial\City Roads Kit\License.txt" />
     <None Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Assets\Environments\Nature Pack\LICENSE.txt" />
     <None Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Assets\Avatars\Kenney\Changelog.txt" />
+    <None Include="Assets\JKT_ART\etc\MatCap.shader" />
     <None Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Assets\Avatars\Kenney\LICENSE.txt" />
     <None Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Readme.txt" />
     <None Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Assets\Props\Firework\LICENSE.txt" />
