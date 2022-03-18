@@ -52,7 +52,7 @@ namespace Ubiq.XR
         {
             int mouseButton = 2;
             var mainCamera = FindCamera();
-
+            
             if (Input.GetMouseButtonDown(mouseButton) && grasped != null)
             {
                 grasped.Release(hand);
