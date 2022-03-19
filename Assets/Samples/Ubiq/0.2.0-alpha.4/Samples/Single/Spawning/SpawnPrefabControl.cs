@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using Ubiq.XR;
+using static EnvironmentManager;
+using static ScaleController;
 
 namespace Ubiq.Samples.Single.Spawning
 {
@@ -9,7 +13,6 @@ namespace Ubiq.Samples.Single.Spawning
     public class SpawnPrefabControl : MonoBehaviour
     {
         private GameObject prefab;
-
         public void SetPrefab(GameObject Prefab)
         {
             prefab = Prefab;
@@ -24,7 +27,20 @@ namespace Ubiq.Samples.Single.Spawning
 
         void Spawn()
         {
-            NetworkSpawner.Spawn(this, prefab);
+            var cube = NetworkSpawner.Spawn(this, prefab);
+            cube.transform.localScale = cube.transform.localScale * cubescale;
+            if (playerLocation != lastposition)
+            {
+                cube.transform.position = playerLocation + new Vector3(0f, cube.transform.localScale.y, 1.2f + cube.transform.localScale.z);
+                
+            }else {
+                Debug.Log(lastBrick);
+                cube.transform.position = lastBrick + new Vector3(0f, cube.transform.localScale.y/2, 0f);
+            }
+            
+            lastBrick = cube.transform.position;
+            lastposition = playerLocation;
+
         }
     }
 }

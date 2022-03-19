@@ -6,6 +6,8 @@ public class EnvironmentManager : MonoBehaviour
 {
     public static int[,,] SpaceMap = new int[20,20,20];
     public static Vector3 playerLocation = Vector3Int.zero;
+    public static Vector3 playerRotation = Vector3Int.zero;
+    public static Vector3 lastBrick = Vector3Int.zero;
     private Vector3 lastLocation = Vector3Int.zero;
     // Start is called before the first frame update
     void Start()
