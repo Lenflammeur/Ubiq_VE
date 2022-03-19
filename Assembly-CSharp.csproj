@@ -58,6 +58,7 @@
     <Compile Include="Assets\ControlBricks.cs" />
     <Compile Include="Assets\EnvironmentManager.cs" />
     <Compile Include="Assets\FollowPlayer.cs" />
+    <Compile Include="Assets\FollowPlayerKeyboard.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\AvatarGallery\Scripts\OvrAvatarTestDriver.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\GripPoses\Scripts\PoseEditHelper.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\LocalAvatar\Scripts\GazeTargetSpawner.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\Boids.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\BoidsManager.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Applications\Boids\BoidsTransformsComponent.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Button\Scripts\ButtonVR.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\AudioBox.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\AvatarAudioStatusIndicator.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\AvatarMenuController.cs" />
@@ -270,8 +272,13 @@
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\TextEntryKeyboardListener.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\TextPageIndicator.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\TexturedAvatar.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\TypingArea.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\UserPanelController.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\WristMenuInvoker.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\exitGame_yushan.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\keyboardButton.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\keyboard_new.cs" />
+    <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Intro\Scripts\menuController.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Readme.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Single\Networking\Scripts\ThroughputBenchmark.cs" />
     <Compile Include="Assets\Samples\Ubiq\0.2.0-alpha.4\Samples\Single\Questionnaire\LogCollectorCreator.cs" />
