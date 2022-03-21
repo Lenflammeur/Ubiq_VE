@@ -13,6 +13,7 @@ public class TimerCountdown : MonoBehaviour
     public GameObject bomb;
     private int minutesLeft;
     private int secondsLeft;
+    public static string displayTime;
     public Button start;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class TimerCountdown : MonoBehaviour
         Debug.Log("Start CountDown");
         if (timeLeft == -1)
         {
+            displayTime = "Display Time";
             textDisplay.GetComponent<Text>().text = "Display Time";
             return;
         }
@@ -27,10 +29,12 @@ public class TimerCountdown : MonoBehaviour
         secondsLeft = timeLeft % 60;
         if (secondsLeft < 10)
         {
+            displayTime = "0" + minutesLeft + ":" + "0" + secondsLeft;
             textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + "0" + secondsLeft;
         }
         else
         {
+            displayTime = "0" + minutesLeft + ":" + secondsLeft;
             textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + secondsLeft;
         }
     }
