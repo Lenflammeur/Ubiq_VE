@@ -7,9 +7,9 @@ public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;
     public GameObject gameOver;
-    private int timeLeft = -1;
+    public static int timeLeft = -1;
     public bool takingAway = false;
-    private bool stop = false;
+    public static bool stop = false;
     public GameObject bomb;
     private int minutesLeft;
     private int secondsLeft;
@@ -52,6 +52,11 @@ public class TimerCountdown : MonoBehaviour
 
     private void Update()
     {
+        /*if (!stop)
+        {
+            Debug.Log("Time Countdown" + timeLeft);
+        }*/
+        
         
         if (takingAway == false && timeLeft > 0 && stop == false)
         {
@@ -62,7 +67,7 @@ public class TimerCountdown : MonoBehaviour
             bomb.GetComponent<Animator>().Play("attack01");
             gameOver.GetComponent<Text>().text = "GAME OVER!";
             timeLeft = -1;
-        }
+        } 
     }
 
     IEnumerator TimerTake()

@@ -48,37 +48,6 @@ public class Brick2move : MonoBehaviour, IGraspable, INetworkComponent, INetwork
     {
         public Vector3 position;
     }
-    private bool HasSpaceInMap(Vector3Int start, Vector3Int end)
-    {
-        for (int i = start.x; i < end.x; i++)
-        {
-            for (int j = start.y; i < end.y; i++)
-            {
-                for (int k = start.z; k < end.z; i++)
-                {
-                    if (SpaceMap[i, j, k] != 0)
-                    {
-                        Debug.Log("Place being taken, Can't put");
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
-    private void FillMap(Vector3Int start, Vector3Int end)
-    {
-        for (int i = start.x; i < end.x; i++)
-        {
-            for (int j = start.y; i < end.y; i++)
-            {
-                for (int k = start.z; k < end.z; i++)
-                {
-                    SpaceMap[i, j, k] = 1;
-                }
-            }
-        }
-    }
 
     // Update is called once per frame
     void DestroyScriptInstance()
@@ -118,18 +87,7 @@ public class Brick2move : MonoBehaviour, IGraspable, INetworkComponent, INetwork
                     Debug.Log("Max(PosEndPut, MaxBound)" + Vector3.Max(PosEndPut, MaxBound));
                     Debug.Log("Over the Playing Boundary!");
                 }
-                else
-                {
-                    if (HasSpaceInMap(PosStartPut, PosEndPut))
-                    {
-                        FillMap(PosStartPut, PosEndPut);
-                        Instantiate(transform, new Vector3(last_pos.x, last_pos.y, last_pos.z), Quaternion.identity, transform.parent);
-                    }
-                    else
-                    {
-                        Debug.Log("Place taken");
-                    }
-                }
+
             }
             last_grasp = true;
             
@@ -152,18 +110,6 @@ public class Brick2move : MonoBehaviour, IGraspable, INetworkComponent, INetwork
                     Debug.Log("Min(PosStartPut, MinBound)" + Vector3.Min(PosStartPut, MinBound));
                     Debug.Log("Max(PosEndPut, MaxBound)" + Vector3.Max(PosEndPut, MaxBound));
                     Debug.Log("Over the Playing Boundary!");
-                }else
-                {
-                    if (HasSpaceInMap(PosStartPut, PosEndPut))
-                    {
-                        FillMap(PosStartPut, PosEndPut);
-                        Instantiate(transform, new Vector3(last_pos.x, last_pos.y, last_pos.z), Quaternion.identity, transform.parent);
-                    }
-                    else
-                    {
-                        Debug.Log("Place taken");
-                    }
-                    //Do nothing
                 }
             } 
         }

@@ -29,6 +29,7 @@ namespace Ubiq.Samples.Single.Spawning
         {
             var cube = NetworkSpawner.Spawn(this, prefab);
             cube.transform.localScale = cube.transform.localScale * cubescale;
+            //cube.transform.localRotation = GetComponent<PlayerController>().transform.rotation;
             if (playerLocation != lastposition)
             {
                 cube.transform.position = playerLocation + new Vector3(0f, cube.transform.localScale.y, 1.2f + cube.transform.localScale.z);
