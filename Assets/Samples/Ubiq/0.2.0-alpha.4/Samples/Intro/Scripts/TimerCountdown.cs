@@ -17,6 +17,7 @@ public class TimerCountdown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Start CountDown");
         if (timeLeft == -1)
         {
             textDisplay.GetComponent<Text>().text = "Display Time";
@@ -56,6 +57,7 @@ public class TimerCountdown : MonoBehaviour
         {
             bomb.GetComponent<Animator>().Play("attack01");
             gameOver.GetComponent<Text>().text = "GAME OVER!";
+            timeLeft = -1;
         }
     }
 
