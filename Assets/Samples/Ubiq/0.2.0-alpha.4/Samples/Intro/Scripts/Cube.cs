@@ -11,52 +11,62 @@ namespace Ubiq.Samples
         private NetworkContext context;
         //public PrefabCatalogue StCatalogue;
         private Hand grasped;
-        private Vector3 last_pos = Vector3Int.zero;
-        private bool last_grasp = false;
         private Vector3 VarGrid = Vector3Int.zero;
         private int count1 = 0;
         //public GameObject MyPrefab;
-        public NetworkId Id { get; set; } // the network Id will be set by the spawner, which will always be the one to instantiate the Firework
+        public bool owner = true;
 
+        public struct Message
+        {
+            public TransformMessage transform;
+            public Color colour;
 
+            public Message(Transform transform, Color colour)
+            {
+                this.transform = new TransformMessage(transform);
+                this.colour = colour;
 
+            }
+        }
+        public NetworkId Id { get; set; } = new NetworkId(); // the network Id will be set by the spawner,
+                                                                  // which will always be the one
+        // to instantiate the cubes
         private void Start()
         {
             count1 = 0;
             //Debug.Log(StCatalogue);
             //MyPrefab = StCatalogue.prefabs[0];
-            //context = NetworkScene.Register(this);
+            context = NetworkScene.Register(this);
             VarGrid.x = 0.5f * transform.localScale.x % 2;
             VarGrid.y = 0.5f * transform.localScale.y % 2;
             VarGrid.z = 0.5f * transform.localScale.z % 2;
 
         }
-        /*
-        public void SetPrefab(GameObject Prefab)
+
+        public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
         {
-            prefab = Prefab;
-            Debug.Log(Prefab.name);
-            Prefab.name = "Cube";
-        }*/
-        /*public void Attach(Hand hand)
-        {
-            Debug.Log("Attach_Cube");
-            attached = hand;
-        }*/
+            var msg = message.FromJson<Message>();
+
+            transform.localPosition = msg.transform.position; // The Message constructor will take the *local* properties of the passed transform.
+            transform.localRotation = msg.transform.rotation;
+            GetComponentInChildren<Renderer>().material.SetColor("_Color", msg.colour);
+        }
 
 
         private void Update()
         {
+            if (owner)
+            {
+                context.SendJson(new Message(transform, GetComponentInChildren<Renderer>().material.color));
+            }
             if (grasped)
             {
                 //Debug.Log("grasped");
                 //Vector3 roundTrans = Vector3Int.RoundToInt(grasped.transform.position - VarGrid) + VarGrid;
                 //Debug.Log(roundTrans);
                 transform.position = grasped.transform.position;
-                /*if(count1 == 0)
-                {
-                    var cube = NetworkSpawner.SpawnPersistent(this, MyPrefab).GetComponents<MonoBehaviour>().Where(mb => mb is IGraspable).FirstOrDefault() as IGraspable;
-                }*/
+                transform.rotation = grasped.transform.rotation;
+                context.SendJson(new Message(transform, GetComponentInChildren<Renderer>().material.color));
 
             }
 
@@ -88,12 +98,7 @@ namespace Ubiq.Samples
 
         public void OnSpawned(bool local)
         {
-
-        }
-
-        public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
-        {
-            throw new System.NotImplementedException();
+            owner = local;
         }
 
         public void Grasp(Hand controller)
