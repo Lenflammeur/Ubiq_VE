@@ -6,7 +6,6 @@ using UnityEngine.Events;
 using Ubiq.Rooms;
 using Ubiq.Messaging;
 using Ubiq.XR;
-
 namespace Ubiq.Samples
 {
     public interface ISocialMenuBindable

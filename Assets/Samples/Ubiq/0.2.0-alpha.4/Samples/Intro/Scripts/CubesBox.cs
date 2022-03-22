@@ -18,7 +18,7 @@ namespace Ubiq.Samples
     public class CubesBox : MonoBehaviour, IUseable, IGraspable
     {
         public GameObject CubePrefab;
-
+        public static int cubcount = 0;
         private Hand follow;
         private Rigidbody body;
 
@@ -46,6 +46,7 @@ namespace Ubiq.Samples
             var cube = NetworkSpawner.SpawnPersistent(this, CubePrefab).GetComponents<MonoBehaviour>().Where(mb => mb is IGraspable).FirstOrDefault() as IGraspable;
             if (cube != null)
             {
+                cubcount = cubcount + 1;
                 cube.Grasp(controller);
             }
         }     
