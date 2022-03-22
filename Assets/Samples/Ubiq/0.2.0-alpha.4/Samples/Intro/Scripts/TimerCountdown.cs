@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class TimerCountdown : MonoBehaviour
 {
-    public GameObject textDisplay;
-    public GameObject gameOver;
+    //Builder's property
+
+    //public GameObject textDisplay;
+    //public GameObject gameOver;
+    //public GameObject bomb;
     public static int timeLeft = -1;
     public bool takingAway = false;
-    public static bool stop = false;
-    public GameObject bomb;
     private int minutesLeft;
     private int secondsLeft;
+
+    public static bool stop = false;
     public static string displayTime;
     public Button start;
     // Start is called before the first frame update
@@ -22,7 +25,7 @@ public class TimerCountdown : MonoBehaviour
         if (timeLeft == -1)
         {
             displayTime = "Display Time";
-            textDisplay.GetComponent<Text>().text = "Display Time";
+            //textDisplay.GetComponent<Text>().text = "Display Time";
             return;
         }
         minutesLeft = timeLeft / 60;
@@ -30,12 +33,12 @@ public class TimerCountdown : MonoBehaviour
         if (secondsLeft < 10)
         {
             displayTime = "0" + minutesLeft + ":" + "0" + secondsLeft;
-            textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + "0" + secondsLeft;
+            //textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + "0" + secondsLeft;
         }
         else
         {
             displayTime = "0" + minutesLeft + ":" + secondsLeft;
-            textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + secondsLeft;
+            //textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + secondsLeft;
         }
     }
 
@@ -52,21 +55,14 @@ public class TimerCountdown : MonoBehaviour
 
     private void Update()
     {
-        /*if (!stop)
-        {
-            Debug.Log("Time Countdown" + timeLeft);
-        }*/
-        
-        
         if (takingAway == false && timeLeft > 0 && stop == false)
         {
             StartCoroutine(TimerTake());
         }
         if (timeLeft == 0)
         {
-            bomb.GetComponent<Animator>().Play("attack01");
-            gameOver.GetComponent<Text>().text = "GAME OVER!";
-            timeLeft = -1;
+            //bomb.GetComponent<Animator>().Play("attack01");
+            //timeLeft = -1;
         } 
     }
 
@@ -79,13 +75,14 @@ public class TimerCountdown : MonoBehaviour
         secondsLeft = timeLeft % 60;
         if (secondsLeft < 10)
         {
-            textDisplay.GetComponent<Text>().text = "0" + minutesLeft +":"+ "0" +secondsLeft;
+            displayTime = "0" + minutesLeft + ":" + "0" + secondsLeft;
+            //textDisplay.GetComponent<Text>().text = "0" + minutesLeft +":"+ "0" +secondsLeft;
         }
         else
         {
-            textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + secondsLeft;
+            displayTime = "0" + minutesLeft + ":" + secondsLeft;
+            //textDisplay.GetComponent<Text>().text = "0" + minutesLeft + ":" + secondsLeft;
         }
-        
         takingAway = false;
     }
 }

@@ -15,7 +15,7 @@ public class quizManager : MonoBehaviour
     private int currentAnswerIndex = 0;
     public static string answerWord;
 
-    //public Text textElement;
+    public Text textElement;
 
     void SetQuestion()
     {
@@ -27,11 +27,11 @@ public class quizManager : MonoBehaviour
 
     public void SetRiddle() {
         SetQuestion();
-        //textElement.text = answerWord;
+        textElement.text = answerWord;
     }
 
     void start() {
         SetQuestion();
-        //textElement.text = answerWord;
+        textElement.text = answerWord;
     }
 }
