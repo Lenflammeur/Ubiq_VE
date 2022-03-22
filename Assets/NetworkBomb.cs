@@ -13,15 +13,20 @@ namespace Ubiq.Samples
     {
         private Hand follow;
         private NetworkContext context;
-        public static string correctWord = null;
+        
         public bool owner = true;
         public Animator animator;
         private int last_time = -1;
-        private bool isStarted = false;
         public GameObject InputWord; //Find input
         public GameObject displayTimeObject;
-        private string displayTimeLeft; // only be updated by the other user's bomb
-        private int time_left;
+        // only be updated by the other user's bomb
+
+        // NETWORK OBJECTS
+        public static string correctWord = null; //NETWORK
+        private string displayTimeLeft; //NETWORK
+        private int time_left; //NETWORK
+        private bool isStarted = false; //NETWORK
+        private bool localStop; //NETWORK
         public GameObject gameOver;
 
         public NetworkId Id { get; set; } = NetworkId.Unique();
@@ -71,49 +76,44 @@ namespace Ubiq.Samples
                 gameOver.GetComponent<Text>().text = "YOUR GROUP WIN!";//Win for owner
                 //Back to original state and notice the non-owner
                 time_left = -1;
-                context.SendJson(new Message(transform, correctWord, time_left, displayTimeLeft));
                 stop = true;
+                context.SendJson(new Message(transform, correctWord, time_left, displayTimeLeft, stop, isStarted));
             }
+
             //Sync with timer
             time_left = timeLeft;
-            //Debug.Log(last_time+" "+time_left+"stop"+stop); //correct
-            Debug.Log("displayTime: " + displayTime);
-            Debug.Log("displayTimeLeft: " + displayTimeLeft);
             displayTimeObject.GetComponent<Text>().text = displayTimeLeft;
-            //Start the bomb
+
+            // During time for owner
+            if (!owner)
+            {
+                Debug.Log("I am not owner");
+            }
+            if (owner)
+            {
+                Debug.Log("owner" + timeLeft);
+                displayTimeLeft = displayTime;
+                correctWord = answerWord;
+                //non-owner time_left sync with timeLeft on owner's timer
+                context.SendJson(new Message(transform, correctWord, time_left, displayTimeLeft, stop, isStarted)); 
+            }
             if (last_time - time_left == 1 && !isStarted && !stop)
             {
                 Debug.Log("Play Entry from" + time_left + owner);
                 this.GetComponent<Animator>().Play("Entry");
                 isStarted = true;
             }
-            // During time for owner
-            if (owner)
-            {
-                Debug.Log("owner" + timeLeft);
-                displayTimeLeft = displayTime;
-                time_left = timeLeft;// owner time_left sync with timeLeft on owner's timer
-                correctWord = answerWord;
-                //non-owner time_left sync with timeLeft on owner's timer
-                context.SendJson(new Message(transform, correctWord, time_left, displayTimeLeft)); 
-            }
             //During time for non-owner
             if (!owner && time_left > 0 && !stop)
             {
-                //Win for non-owner
-                //Debug.Log(answerWord);
-                //Debug.Log(InputWord.GetComponent<Text>().text);
-                //Debug.Log(correctWord);
                 if (InputWord.GetComponent<Text>().text == correctWord)
                 {
                     stop = true;
                     timeLeft = -1;
                     time_left = -1000;
-                    
                     gameOver.GetComponent<Text>().text = "YOUR GROUP WIN!";
-                    context.SendJson(new Message(transform, correctWord, time_left, displayTimeLeft));//Notice the owner that we win
+                    context.SendJson(new Message(transform, correctWord, time_left, displayTimeLeft, stop, isStarted));//Notice the owner that we win
                 }
-                
             }
             //Bomb exploared
             if (time_left == 0 && !stop)
@@ -122,6 +122,7 @@ namespace Ubiq.Samples
                 Debug.Log("attack01" + time_left + owner);
                 this.GetComponent<Animator>().Play("attack01"); 
                 gameOver.GetComponent<Text>().text = "GAME OVER!";
+                
                 stop = true;
                 isStarted = false;
                 timeLeft = -1;//Game end with initial timeLeft
@@ -135,12 +136,16 @@ namespace Ubiq.Samples
             public string correctWord;
             public string displayTimeLeft;
             public int time_left;
-            public Message(Transform transform, string correctWord, int time_left, string displayTimeLeft)
+            public bool stop;
+            public bool isStarted;
+            public Message(Transform transform, string correctWord, int time_left, string displayTimeLeft, bool stop, bool isStarted)
             {
                 this.transform = new TransformMessage(transform);
                 this.correctWord = answerWord;
                 this.time_left = time_left;
                 this.displayTimeLeft = displayTimeLeft;
+                this.stop = stop;
+                this.isStarted = isStarted;
             }
         }
         public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
@@ -153,6 +158,8 @@ namespace Ubiq.Samples
             correctWord = msg.correctWord;
             displayTimeLeft = msg.displayTimeLeft;
             time_left = msg.time_left;
+            stop = msg.stop;
+            isStarted = msg.isStarted;
         }
     }
 }
