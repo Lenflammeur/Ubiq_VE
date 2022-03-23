@@ -17,9 +17,9 @@ public class menuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > 3.0f)
+        /*if(Time.time > 3.0f)
         {
             SceneManager.LoadScene("Hello World");
-        }
+        } */
     }
 }
