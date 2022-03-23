@@ -77,7 +77,7 @@ namespace Ubiq.Samples
         private void FixedUpdate()
         {
             // Judge win for owner
-            if(owner && time_left == -1000)
+            if(time_left == -1000)
             {
                 gameOver.GetComponent<Text>().text = "YOUR GROUP WIN!";//Win for owner
                 //Back to original state and notice the non-owner

@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2D48B936-F093-CE5B-222C-41BF82FE9C46}</ProjectGuid>
+    <ProjectGuid>{A8D41627-EB94-D6BA-CC77-610EA538ECAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Facebook.Wit.Editor</AssemblyName>
@@ -262,6 +262,9 @@
  <Reference Include="UnityEditor">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.34f1c1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.34f1c1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.34f1c1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -278,49 +281,49 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.34f1c1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Buffers.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Memory.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading.Tasks.Extensions">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="BouncyCastle.Crypto">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/BouncyCastle.Crypto.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/BouncyCastle.Crypto.dll</HintPath>
  </Reference>
  <Reference Include="DnsClient">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/DnsClient.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/DnsClient.dll</HintPath>
  </Reference>
  <Reference Include="Microsoft.Extensions.Logging.Abstractions">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="SIPSorcery">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/SIPSorcery.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/SIPSorcery.dll</HintPath>
  </Reference>
  <Reference Include="SIPSorceryMedia.Abstractions">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/SIPSorceryMedia.Abstractions.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/SIPSorceryMedia.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Packages/ubiq-0.2.0-alpha.4/Runtime/Voip/External/SipSorcery/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="log4netPlastic">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Antlr3.Runtime">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Newtonsoft.Json">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/PackageCache/com.unity.collab-proxy@1.14.9/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.34f1c1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -680,21 +683,21 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.34f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/15460/Documents/UCL MSc CGVI/Virtual Environment/HW2-Group Project/Ubiq_VE-RuoxiOculus/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Facebook.WitAI.csproj">
-      <Project>{9DDCD22B-B35A-DA0E-0388-40414D2ADE14}</Project>
+      <Project>{09330363-89F7-62E8-2E8A-51712707E108}</Project>
       <Name>Facebook.WitAI</Name>
     </ProjectReference>
   </ItemGroup>
